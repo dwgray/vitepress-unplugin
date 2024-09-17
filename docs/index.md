@@ -8,6 +8,12 @@ hero:
   tagline: My great project tagline
 ---
 
-# Testing a component
+# Testing things
+
+## An auto-imported vanilla component
 
 <TestSomething/>
+
+## A bootstrap-vue-next component
+
+<BAlert variant="success" :model-value="true">Success Alert</BAlert>

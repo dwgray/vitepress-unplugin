@@ -1,5 +1,6 @@
 import Components from "unplugin-vue-components/vite";
 import { defineConfig } from "vitepress";
+import { BootstrapVueNextResolver } from "bootstrap-vue-next";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -32,6 +33,7 @@ export default defineConfig({
         globs: ["components/*.vue", "docs/**/demo/*.vue"],
         dts: true,
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        resolvers: [BootstrapVueNextResolver()],
       }),
     ],
   },
