@@ -17,3 +17,9 @@ hero:
 ## A bootstrap-vue-next component
 
 <BAlert variant="success" :model-value="true">Success Alert</BAlert>
+
+## Some Client Only Code
+
+<ClientOnly>
+Does this have an effect on unplugin?
+</ClientOnly>
