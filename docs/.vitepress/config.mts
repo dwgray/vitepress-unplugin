@@ -29,6 +29,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
+      testPlugin(),
       Components({
         globs: ["components/*.vue", "docs/**/demo/*.vue"],
         dts: true,
@@ -38,3 +39,13 @@ export default defineConfig({
     ],
   },
 });
+
+function testPlugin() {
+  return {
+    name: "log-files",
+
+    transform(src: unknown, id: unknown) {
+      console.log("transforming", id);
+    },
+  };
+}
