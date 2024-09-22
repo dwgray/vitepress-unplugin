@@ -1,28 +1,31 @@
 import Components from "unplugin-vue-components/vite";
-import Icons from "unplugin-icons/vite";
 import { defineConfig } from "vitepress";
 import { BootstrapVueNextResolver } from "bootstrap-vue-next";
-
-const baseUrl = "/bootstrap-vue-next/";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Testing unplugin-vue-components",
   description: "A test of auto-resolving components",
-  locales: {
-    root: {
-      label: "English",
-      lang: "en",
-    },
-  },
-  appearance: false,
-  sitemap: {
-    hostname: `https://bootstrap-vue-next.github.io${baseUrl}`,
-  },
   themeConfig: {
-    search: {
-      provider: "local",
-    },
+    // https://vitepress.dev/reference/default-theme-config
+    nav: [
+      { text: "Home", link: "/" },
+      { text: "Examples", link: "/markdown-examples" },
+    ],
+
+    sidebar: [
+      {
+        text: "Examples",
+        items: [
+          { text: "Markdown Examples", link: "/markdown-examples" },
+          { text: "Runtime API Examples", link: "/api-examples" },
+        ],
+      },
+    ],
+
+    socialLinks: [
+      { icon: "github", link: "https://github.com/vuejs/vitepress" },
+    ],
   },
   vite: {
     plugins: [
@@ -33,7 +36,6 @@ export default defineConfig({
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [BootstrapVueNextResolver()],
       }),
-      Icons(),
     ],
   },
 });
