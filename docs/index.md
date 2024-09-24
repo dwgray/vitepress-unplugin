@@ -23,3 +23,7 @@ hero:
 <ClientOnly>
 Does this have an effect on unplugin?
 </ClientOnly>
+
+<script setup lang="ts">
+  console.log("Testing Script")
+</script>
